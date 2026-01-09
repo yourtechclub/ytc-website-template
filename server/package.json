@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strapi CMS",
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.33.1",
+    "@strapi/plugin-users-permissions": "5.33.1",
+    "@strapi/strapi": "5.33.1",
+    "@strapi-community/plugin-seo": "^2.1.1",
+    "better-sqlite3": "^11.8.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=25.x.x",
+    "npm": ">=6.0.0"
+  }
+}

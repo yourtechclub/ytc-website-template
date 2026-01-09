@@ -1,0 +1,31 @@
+{
+  "name": "ytc-website-template",
+  "version": "1.0.0",
+  "description": "YTC Website Platform Template - React Router 7 + Strapi 5 monorepo",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd server && yarn develop\" \"npx wait-on http://localhost:1337 && cd client && yarn dev\"",
+    "build": "yarn build:server && yarn build:client",
+    "build:client": "cd client && yarn build",
+    "build:server": "cd server && yarn build",
+    "setup": "yarn install && yarn setup:env",
+    "setup:env": "node scripts/setup-env.mjs",
+    "seed": "cd server && yarn strapi import -f ../seed-data.tar.gz --force",
+    "export": "cd server && yarn strapi export --no-encrypt -f ../seed-data",
+    "clean": "rm -rf node_modules client/node_modules server/node_modules packages/*/node_modules"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "wait-on": "^8.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "yarn@1.22.22"
+}

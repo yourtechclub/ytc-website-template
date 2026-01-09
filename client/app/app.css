@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+  line-height: var(--leading-normal);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  max-width: var(--spacing-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-container-padding);
+  padding-right: var(--spacing-container-padding);
+}
+
+/* Section spacing */
+.section {
+  padding-top: var(--spacing-section-mobile);
+  padding-bottom: var(--spacing-section-mobile);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-brand-100);
+  color: var(--color-brand-900);
+}
